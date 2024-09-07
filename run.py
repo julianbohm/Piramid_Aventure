@@ -7,23 +7,24 @@ rooms = {
         'est': 'swamp'
     },
     'north_passage' : {
-        'description': "",
+        'description': "The North passage narrows as you proceed, leading deeper into the pyramid. The walls are etched with hieroglyphs of your past glory. You feel a sense of destiny.",
         'north': 'anubis_chamber',
         'est': 'cristal_chamber'
 
     },
     'south_passage' : {
-        'description': "",
+        'description': "The South passage is narrow and dimly lit, the walls slick with condensation. As you walk, strange sounds echo in the distance—whispers of the long-dead. The flicker of your torch casts shifting shadows on the walls, and your footsteps seem to quicken the heartbeat of the ancient stone.",
         'south': 'seth_tempel',
         'est': 'catacombs'
 
     },
     'anubis_chamber' : {
-        'description': "",
+        'description': "You step into the Chamber of Anubis, the air heavy with the scent of incense and the weight of millennia. The towering statues of Anubis, jackal-headed and cold, watch as you approach the center of the room. A stone altar rises before you, flanked by dark torches flickering with blue flames."
+         "Atop the altar lies the Scales of Ma’at, waiting to weigh your heart against the feather of truth. Anubis’ voice fills the chamber, deep and resonant: 'Pharaoh, your journey ends here. All your choices have led to this moment. Your heart will be judged.'",
         
     },
     'cristal_chamber' : {
-        'description': "",
+        'description': "You enter the heart of the Crystal Chambers, where the walls shimmer with a thousand reflections of light. The air hums with ancient magic, and in the center, a massive crystal pulses with energy. Horus’ voice returns: 'Pharaoh, the power you seek lies within, but it is guarded by forces beyond your understanding.'",
         'north': 'anubis_chamber',
         'est': 'red_staircase'
 
@@ -36,14 +37,16 @@ rooms = {
 
     },
     'catacombs' : {
-        'description': "",
+        'description': "You enter the catacombs beneath the temple, where your old warriors stand as bronze statues. Their eyes seem to follow you as you walk among them, frozen in time but eerily lifelike.
+        "At the center of the chamber, your most trusted general stands in solemn vigil. Anubis' voice echoes, “They await your command. Will they rise once more, or remain trapped in bronze?",
         'north': 'swamp',
         'south': 'seth_tempel',
         'est': 'treasure_chamber'
 
     },
     'seth_temple' : {
-        'description': "",
+        'description': "You enter the Temple of Seth, its dark interior filled with the god's ominous presence. The altar at the center radiates an unsettling energy, and Seth’s laughter echoes through the chamber.
+        "As you approach, Seth’s voice intones, “Here your journey ends, Pharaoh. Chaos reigns supreme.' The shadows close in, and the temple’s darkness claims you, sealing your fate.",
         
     },
     'red_staircase' : {
@@ -54,14 +57,14 @@ rooms = {
 
     },
     'horus_temple' : {
-        'description': "",
+        'description': "You are inside the ancient Temple of Horus, sunlight streaming through high windows, casting the god’s symbol on the floor. A voice echoes through the chamber: 'Pharaoh {name}, I have returned to guide you. Choose your path wisely.' Before you. Horus’ voice grows softer, 'Each path holds your fate; may the gods favor you.'",
         'north': 'red_staircase',
         'south':'treasure_chamber',
         'est': 'kindom'
 
     },
     'treasure_chamber' : {
-        'description': "",
+        'description': "You find yourself deep within the Temple of Horus, standing before a massive stone door adorned with golden hieroglyphs. The voice of Horus speaks softly: “Beyond this lies the Treasure Chamber, but only the worthy may claim its riches. Choose carefully, Pharaoh {name}.",
         'north': 'horus_temple',
         'south': 'seth_tempel',
         'est': 'kindom'
