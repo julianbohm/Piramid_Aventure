@@ -36,12 +36,14 @@ rooms = {
         'est': 'horus_tempel'
 
     },
+    """
     'catacombs' : {
         'description': "You enter the catacombs beneath the temple, where your old warriors stand as bronze statues. Their eyes seem to follow you as you walk among them, frozen in time but eerily lifelike.
         "At the center of the chamber, your most trusted general stands in solemn vigil. Anubis' voice echoes, “They await your command. Will they rise once more, or remain trapped in bronze?",
         'north': 'swamp',
         'south': 'seth_tempel',
         'est': 'treasure_chamber'
+        """
 
     },
     'seth_temple' : {
@@ -82,3 +84,15 @@ rooms = {
 
 # Inicial player's location
 current_room = 'sarcophagus_chamber'
+
+
+# Main game function
+def play_game():
+    global current_room 
+
+    """
+    ask player for input name at the start of the game, and Welcome message with line spacing
+    """
+    name = input("What is your name, Pharaon?" )
+
+    print(f"\nWelcome, Pharaon {name}, to the land of the living!\n")
