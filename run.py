@@ -72,8 +72,13 @@ rooms = {
     },
 
     'victory' : {
-        'description': "",
+        'description': "You stand victorious in the heart of the temple, the gods now silent as the power of your triumph fills the air. The treasures of the kingdom lie before you—gold, jewels, and relics of immense power, all now yours to command. The throne room shimmers with wealth beyond imagination, and your subjects bow in reverence as you take your place upon the throne.
+        "The voice of Horus echoes one final time: “Pharaoh, the kingdom is yours. Power, riches, and eternal glory await you.”
+        "As the light of the gods fades, you realize that your reign has only just begun, your name destined to echo through eternity.",
 
     },
 
 }
+
+# Inicial player's location
+current_room = 'sarcophagus_chamber'
