@@ -104,10 +104,21 @@ def play_game():
     print(rooms[current_room]['description'])
 
     while True:
-        command = input("Enter a direction (north, south, east, west) or 'quit' to nd the game: ").lower()
+        command = input("Enter a direction (north, south, east, west) or 'quit' to end the game: ").lower()
 
+        #quit command  send a goodbye massage and end the game.
         if command == 'quit':
-            print(Farewell, Pharaoh {name}!!!!!)
+            print(f"Farewell, Pharaoh {name}!!!!!")
+            break
+        # move the players to the other romms.
+        if command in rooms[current_room]:
+            current_room = rooms[current_room][command]
+            print(f"\nYou move {command} and find yourself in:\n")
+            print(rooms[current_room]['description'])
+
+        
+        else:
+            print("You can't go that way, try another direction.")
 
 
 #Start the game
