@@ -95,7 +95,7 @@ def play_game():
     name = input("What is your name, Pharaoh? ")
 
     print(f"\nWelcome, Pharaon {name}, to the land of the living!\n")
-    #to discribe the initial room
+    # to discribe the initial room
     print(rooms[current_room]['description'])
     # add empty line to better readability 
     print()
@@ -103,7 +103,7 @@ def play_game():
     while True:
         command = input("Enter a direction (north, south, east, west) or 'quit' to end the game: ").lower()
 
-        #quit command  send a goodbye massage and end the game.
+        # quit command  send a goodbye massage and end the game.
         if command == 'quit':
             print(f"Farewell, Pharaoh {name}!!!!!")
             break
@@ -112,20 +112,16 @@ def play_game():
             current_room = rooms[current_room][command]
             print(f"\nYou move {command} and find yourself in {current_room} :\n")
             print(rooms[current_room]['description'])
-           
             # victory room finish the game with a message of vitory.
             if current_room == 'victory':
                 print(f"\nCongratulations, Pharaoh {name}, you have achieved victory and eternal glory!")
                 break
-            
-            if current_room == 'seth_temple' or current_room =='anubis_chamber':
+            if current_room == 'seth_temple' or current_room == 'anubis_chamber':
                 print(f"you lose Pharaoh {name}, your name will be forgotten.")
                 break
-    
         else:
             print("You can't go that way, try another direction.")
 
 
-#Start the game
+# Start the game
 play_game()
-
