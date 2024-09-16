@@ -14,7 +14,7 @@ rooms = {
     },
     'south_passage' : {
         'description': "The South passage is narrow and dimly lit, the walls slick with condensation. As you walk, strange sounds echo in the distance—whispers of the long-dead. The flicker of your torch casts shifting shadows on the walls, and your footsteps seem to quicken the heartbeat of the ancient stone.",
-        'south': 'seth_tempel',
+        'south': 'seth_temple',
         'east': 'catacombs'
 
     },
@@ -33,7 +33,7 @@ rooms = {
         'description': "",
         'north': 'cristal_chamber',
         'south': 'catacombs',
-        'east': 'horus_tempel'
+        'east': 'horus_temple'
 
     },
     
@@ -43,7 +43,7 @@ rooms = {
         At the center of the chamber, your most trusted general stands in solemn vigil. Anubis voice echoes, They await your command. Will they rise once more, or remain trapped in bronze?
         """,
         'north': 'swamp',
-        'south': 'seth_tempel',
+        'south': 'seth_temple',
         'east': 'treasure_chamber'
     
     },
@@ -55,24 +55,24 @@ rooms = {
         
     },
     'red_staircase' : {
-        'description': "",
+        'description': "You stand before a grand staircase, its steps colored red from years of wear. The air grows lighter, and you feel a sense of hope as you ascend to the top.",
         'north': 'anubis_temple',
         'south': 'horus_temple',
-        'east': 'Kindom'
+        'east': 'victory'
 
     },
     'horus_temple' : {
         'description': "You are inside the ancient Temple of Horus, sunlight streaming through high windows, casting the god’s symbol on the floor. A voice echoes through the chamber: 'Pharaoh {name}, I have returned to guide you. Choose your path wisely.' Before you. Horus’ voice grows softer, 'Each path holds your fate; may the gods favor you.'",
         'north': 'red_staircase',
         'south':'treasure_chamber',
-        'east': 'kindom'
+        'east': 'victory'
 
     },
     'treasure_chamber' : {
         'description': "You find yourself deep within the Temple of Horus, standing before a massive stone door adorned with golden hieroglyphs. The voice of Horus speaks softly: “Beyond this lies the Treasure Chamber, but only the worthy may claim its riches. Choose carefully, Pharaoh {name}.",
         'north': 'horus_temple',
-        'south': 'seth_tempel',
-        'east': 'kindom'
+        'south': 'seth_temple',
+        'east': 'victory'
 
     },
 
@@ -97,7 +97,7 @@ def play_game():
     """
     ask player for input name at the start of the game, and Welcome message with line spacing
     """
-    name = input("What is your name, Pharaon?" )
+    name = input("What is your name, Pharaoh? ")
 
     print(f"\nWelcome, Pharaon {name}, to the land of the living!\n")
     #to discribe the initial room
@@ -113,12 +113,17 @@ def play_game():
         # move the players to the other romms.
         if command in rooms[current_room]:
             current_room = rooms[current_room][command]
-            print(f"\nYou move {command} and find yourself in:\n")
+            print(f"\nYou move {command} and find yourself in :\n")
             print(rooms[current_room]['description'])
-
-        
-        else:
-            print("You can't go that way, try another direction.")
+        # victory room finish the game with a message of vitory.
+        if current_room == 'victory':
+            print(f"\nCongratulations, Pharaoh {name}, you have achieved victory and eternal glory!")
+            break
+        if current_room == 'seth_temple' or current_room =='anubis_chamber':
+            print(f"you lose Pharaoh {name}, your name will be forgotten.")
+            break
+    else:
+        print("You can't go that way, try another direction.")
 
 
 #Start the game
