@@ -195,10 +195,10 @@ def check_game_end(current_room, name):
         return True
     elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
         print(
-            f"\nYour journey ends here, Pharaoh {name}. The gods have judged"
+            f"\nYour journey ends here, Pharaoh {name}. The gods have judged "
             "you, and your name will be forgotten in the sands of time."
         )
-        return False
+        return True
 
 
 # Main game function
@@ -211,9 +211,15 @@ def play_game():
     describe_current_room(current_room, rooms)   
 
     while True:
-        # quit command  send a goodbye massage and end the game.
+        command = get_player_command()
         if command == 'quit':
             print(f"Farewell, Pharaoh {name}!!!!!")
+            break
+        elif command in ['north', 'south', 'east', 'west']:
+            current_room = move_player(command, current_room, rooms)
+            describe_current_room(current_room, rooms)
+            if check_game_end(current_room, name):
+                break
         else:
             print("You can't go that way, try another direction.")
 
