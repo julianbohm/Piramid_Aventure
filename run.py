@@ -1,26 +1,38 @@
 # Rooms and connections of the game
 rooms = {
-    'sarcophagus_chamber' : {
-        'description': "You awaken in a dark chamber, the cold stone of the pyramid walls surrounds you. The flicker of ancient torchlight casts long shadows on the walls, and the air smells of dust and time. You are the Pharaoh, long entombed, but somehow, you have awoken from your eternal sleep.",
+    'sarcophagus_chamber': {
+        'description': (
+            "You awaken in a dark chamber, the cold stone of the pyramid walls surrounds you. "
+            "The flicker of ancient torchlight casts long shadows on the walls, and the air smells of dust and time. "
+            "You are the Pharaoh, long entombed, but somehow, you have awoken from your eternal sleep."),
         'north': 'north_passage',
         'south': 'south_passage',
         'east': 'swamp'
     },
-    'north_passage' : {
-        'description': "The North passage narrows as you proceed, leading deeper into the pyramid. The walls are etched with hieroglyphs of your past glory. You feel a sense of destiny.",
+    'north_passage': {
+        'description': (
+            "The North passage narrows as you proceed, leading deeper into the pyramid. "
+            "The walls are etched with hieroglyphs of your past glory. You feel a sense of destiny. "),
         'north': 'anubis_chamber',
         'east': 'cristal_chamber',
         'south': 'sarcophagus_chamber'
     },
-    'south_passage' : {
-        'description': "The South passage is narrow and dimly lit, the walls slick with condensation. As you walk, strange sounds echo in the distance—whispers of the long-dead. The flicker of your torch casts shifting shadows on the walls, and your footsteps seem to quicken the heartbeat of the ancient stone.",
+    'south_passage': {
+        'description': (
+            "The South passage is narrow and dimly lit, the walls slick with condensation. "
+            "As you walk, strange sounds echo in the distance—whispers of the long-dead. "
+            "The flicker of your torch casts shifting shadows on the walls, and your footsteps seem to quicken the heartbeat of the ancient stone. "),
         'north': 'sarcophagus_chamber',
         'south': 'seth_temple',
         'east': 'catacombs'
     },
-    'anubis_chamber' : {
-        'description': "You step into the Chamber of Anubis, the air heavy with the scent of incense and the weight of millennia. The towering statues of Anubis, jackal-headed and cold, watch as you approach the center of the room. A stone altar rises before you, flanked by dark torches flickering with blue flames."
-        "Atop the altar lies the Scales of Ma’at, waiting to weigh your heart against the feather of truth. Anubis’ voice fills the chamber, deep and resonant: 'Pharaoh, your journey ends here. All your choices have led to this moment. Your heart will be judged.'",
+    'anubis_chamber': {
+        'description': (
+            "You step into the Chamber of Anubis, the air heavy with the scent of incense and the weight of millennia. "
+            "The towering statues of Anubis, jackal-headed and cold, watch as you approach the center of the room. "
+            "A stone altar rises before you, flanked by dark torches flickering with blue flames."
+            "Atop the altar lies the Scales of Ma’at, waiting to weigh your heart against the feather of truth. "
+            "Anubis’ voice fills the chamber, deep and resonant: 'Pharaoh, your journey ends here. All your choices have led to this moment. Your heart will be judged.'" ),
     },
     'cristal_chamber' : {
         'description': "You enter the heart of the Crystal Chambers, where the walls shimmer with a thousand reflections of light. The air hums with ancient magic, and in the center, a massive crystal pulses with energy. Horus’ voice returns: 'Pharaoh, the power you seek lies within, but it is guarded by forces beyond your understanding.'",
@@ -112,6 +124,7 @@ def play_game():
             current_room = rooms[current_room][command]
             print(f"\nYou move {command} and find yourself in {current_room} :\n")
             print(rooms[current_room]['description'])
+            print()
             # victory room finish the game with a message of vitory.
             if current_room == 'victory':
                 print(f"\nCongratulations, Pharaoh {name}, you have achieved victory and eternal glory!")
