@@ -182,6 +182,23 @@ def move_player(direction, current_room, rooms):
         print("You can't go that way, try another direction.")
         return current_room
 
+
+#function if the game end
+def check_game_end(current_room, name):
+    if current_room == 'victory':
+        print(
+            f"\nCongratulations, Pharaoh {name}, you have achieved victory"
+            "and eternal glory!"
+            )
+        return True
+    elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
+        print(
+            f"\nYour journey ends here, Pharaoh {name}. The gods have judged"
+        "you, and your name will be forgotten in the sands of time."
+        )
+        return False
+
+
 # Main game function
 def play_game():
     global current_room
@@ -189,15 +206,7 @@ def play_game():
     while True:
         # quit command  send a goodbye massage and end the game.
         if command == 'quit':
-            print(f"Farewell, Pharaoh {name}!!!!!")
-            break
-            # victory room finish the game with a message of vitory.
-            if current_room == 'victory':
-                print(f"\nCongratulations, Pharaoh {name}, you have achieved victory and eternal glory!")
-                break
-            elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
-                print(f"you lose Pharaoh {name}, your name will be forgotten.")
-                break
+            print(f"Farewell, Pharaoh {name}!!!!!")       
         else:
             print("You can't go that way, try another direction.")
 
