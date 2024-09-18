@@ -169,13 +169,15 @@ def describe_current_room(room, rooms):
     print(rooms[room]['description'])
 
 
+#function to ask the player for command
+def get_player_command():
+    return input("Enter a direction (north, south, east, west), or 'quit' to end the game: ").lower()
+
 # Main game function
 def play_game():
     global current_room
 
     while True:
-        command = input("Enter a direction (north, south, east, west) or 'quit' to end the game: ").lower()
-
         # quit command  send a goodbye massage and end the game.
         if command == 'quit':
             print(f"Farewell, Pharaoh {name}!!!!!")
