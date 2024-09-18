@@ -164,17 +164,19 @@ def welcome_player():
     return name
 
 
-#Function current room
+# Function current room
 def describe_current_room(room, rooms):
     print(rooms[room]['description'])
 
 
-#function to ask the player for command
+# function to ask the player for command
 def get_player_command():
-    return input("Enter a direction (north, south, east, west), or 'quit' to end the game: ").lower()
+    return input(
+        "Enter a direction (north, south, east, west), or 'quit'"
+        "to end the game: ").lower()
 
 
-#function to move the player
+# function to move the player
 def move_player(direction, current_room, rooms):
     if direction in rooms[current_room]:
         return rooms[current_room][direction]
@@ -183,7 +185,7 @@ def move_player(direction, current_room, rooms):
         return current_room
 
 
-#function if the game end
+# function if the game end
 def check_game_end(current_room, name):
     if current_room == 'victory':
         print(
@@ -194,19 +196,24 @@ def check_game_end(current_room, name):
     elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
         print(
             f"\nYour journey ends here, Pharaoh {name}. The gods have judged"
-        "you, and your name will be forgotten in the sands of time."
+            "you, and your name will be forgotten in the sands of time."
         )
         return False
 
 
 # Main game function
 def play_game():
-    global current_room
+    rooms = create_rooms()
+    current_room = 'sarcophagus_chamber'
+
+    name = welcome_player()
+
+    describe_current_room(current_room, rooms)   
 
     while True:
         # quit command  send a goodbye massage and end the game.
         if command == 'quit':
-            print(f"Farewell, Pharaoh {name}!!!!!")       
+            print(f"Farewell, Pharaoh {name}!!!!!")
         else:
             print("You can't go that way, try another direction.")
 
