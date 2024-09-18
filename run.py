@@ -35,61 +35,69 @@ rooms = {
             "Anubis’ voice fills the chamber, deep and resonant: 'Pharaoh, your journey ends here. All your choices have led to this moment. Your heart will be judged.'" ),
     },
     'cristal_chamber' : {
-        'description': "You enter the heart of the Crystal Chambers, where the walls shimmer with a thousand reflections of light. The air hums with ancient magic, and in the center, a massive crystal pulses with energy. Horus’ voice returns: 'Pharaoh, the power you seek lies within, but it is guarded by forces beyond your understanding.'",
+        'description': (
+            "You enter the heart of the Crystal Chambers, where the walls shimmer with a thousand reflections of light. The air hums with ancient magic, and in the center,"
+            "a massive crystal pulses with energy. Horus’ voice returns: 'Pharaoh, the power you seek lies within, but it is guarded by forces beyond your understanding.'"),
         'north': 'anubis_chamber',
         'east': 'red_staircase',
         'west': 'north_passage',
         'south': 'swamp'
     },
     'swamp' : {
-        'description': "",
+        'description' : (
+            "You are in a dark, muddy swamp. The air is thick with decay, wet earth, and strange noises. Vines hang from trees, and the ground squelches underfoot."
+            "The dim light barely cuts through the dense canopy."),
         'north': 'cristal_chamber',
         'south': 'catacombs',
         'east': 'horus_temple',
         'west': 'sarcophagus_chamber'
     },
     'catacombs' : {
-        'description': """
-        You enter the catacombs beneath the temple, where your old warriors stand as bronze statues. Their eyes seem to follow you as you walk among them, frozen in time but eerily lifelike.
-        At the center of the chamber, your most trusted general stands in solemn vigil. Anubis voice echoes, They await your command. Will they rise once more, or remain trapped in bronze?
-        """,
+        'description': (
+            "You enter the catacombs beneath the temple, where your old warriors stand as bronze statues. Their eyes seem to follow you as you walk among them, frozen in time but eerily lifelike."
+            "At the center of the chamber, your most trusted general stands in solemn vigil. Anubis voice echoes, They await your command. Will they rise once more, or remain trapped in bronze?"), 
         'north': 'swamp',
         'south': 'seth_temple',
         'east': 'treasure_chamber',
         'west': 'south_passage'
      },
     'seth_temple' : {
-        'description': """
-        You enter the Temple of Seth, its dark interior filled with the god's ominous presence. The altar at the center radiates an unsettling energy, and Seth’s laughter echoes through the chamber.
-        As you approach, Seth’s voice intones, “Here your journey ends, Pharaoh. Chaos reigns supreme.' The shadows close in, and the temple’s darkness claims you, sealing your fate.
-        """,
+        'description': (
+            "You enter the Temple of Seth, its dark interior filled with the god's ominous presence. The altar at the center radiates an unsettling energy, and Seth’s laughter echoes through the chamber."
+            "As you approach, Seth’s voice intones, “Here your journey ends, Pharaoh. Chaos reigns supreme.' The shadows close in, and the temple’s darkness claims you, sealing your fate."),
+        
     },
     'red_staircase' : {
-        'description': "You stand before a grand staircase, its steps colored red from years of wear. The air grows lighter, and you feel a sense of hope as you ascend to the top.",
+        'description': (
+            "You stand before a grand staircase, its steps colored red from years of wear. The air grows lighter, and you feel a sense of hope as you ascend to the top."),
         'north': 'anubis_chamber',
         'south': 'horus_temple',
         'east': 'victory',
         'west': 'cristal_chamber'
     },
     'horus_temple' : {
-        'description': "You are inside the ancient Temple of Horus, sunlight streaming through high windows, casting the god’s symbol on the floor. A voice echoes through the chamber: 'Pharaoh {name}, I have returned to guide you. Choose your path wisely.' Before you. Horus’ voice grows softer, 'Each path holds your fate; may the gods favor you.'",
+        'description': (
+            "You are inside the ancient Temple of Horus, sunlight streaming through high windows, casting the god’s symbol on the floor. A voice echoes through the chamber:"
+            "I have returned to guide you. Choose your path wisely.' Before you. Horus’ voice grows softer, 'Each path holds your fate; may the gods favor you.'"),
         'north': 'red_staircase',
         'south':'treasure_chamber',
         'east': 'victory',
         'west': 'swamp'
     },
     'treasure_chamber' : {
-        'description': "You find yourself deep within the Temple of Horus, standing before a massive stone door adorned with golden hieroglyphs. The voice of Horus speaks softly: “Beyond this lies the Treasure Chamber, but only the worthy may claim its riches. Choose carefully, Pharaoh {name}.",
+        'description': (
+            "You find yourself deep within the Temple of Horus, standing before a massive stone door adorned with golden hieroglyphs. The voice of Horus speaks softly: “Beyond this lies the Treasure Chamber, but only the worthy may claim its riches. Choose carefully."),
         'north': 'horus_temple',
         'south': 'seth_temple',
         'east': 'victory',
         'west': 'catacombs' 
     },
     'victory' : {
-        'description': """
-        You stand victorious in the heart of the temple, the gods now silent as the power of your triumph fills the air. The treasures of the kingdom lie before you—gold, jewels, and relics of immense power, all now yours to command. The throne room shimmers with wealth beyond imagination, and your subjects bow in reverence as you take your place upon the throne.
-        The voice of Horus echoes one final time: “Pharaoh, the kingdom is yours. Power, riches, and eternal glory await you. As the light of the gods fades, you realize that your reign has only just begun, your name destined to echo through eternity.
-        """,
+        'description': (
+            "You stand victorious in the heart of the temple, the gods now silent as the power of your triumph fills the air. The treasures of the kingdom lie before you—gold, jewels, and relics of immense power, all now yours to command."
+            "The throne room shimmers with wealth beyond imagination, and your subjects bow in reverence as you take your place upon the throne."
+            "The voice of Horus echoes one final time: “Pharaoh, the kingdom is yours. Power, riches, and eternal glory await you. As the light of the gods fades, you realize that your reign has only just begun, your name destined to echo through eternity."),
+        
     },
 }
 
