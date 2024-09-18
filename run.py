@@ -1,5 +1,6 @@
 # Rooms and connections of the game
-rooms = {
+def create_rooms():
+    return {
     'sarcophagus_chamber': {
         'description': (
             "You awaken in a dark chamber, the cold stone of the pyramid walls surrounds you. "
@@ -137,7 +138,7 @@ def play_game():
             if current_room == 'victory':
                 print(f"\nCongratulations, Pharaoh {name}, you have achieved victory and eternal glory!")
                 break
-            if current_room == 'seth_temple' or current_room == 'anubis_chamber':
+            elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
                 print(f"you lose Pharaoh {name}, your name will be forgotten.")
                 break
         else:
