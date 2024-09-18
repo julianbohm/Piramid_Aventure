@@ -173,6 +173,15 @@ def describe_current_room(room, rooms):
 def get_player_command():
     return input("Enter a direction (north, south, east, west), or 'quit' to end the game: ").lower()
 
+
+#function to move the player
+def move_player(direction, current_room, rooms):
+    if direction in rooms[current_room]:
+        return rooms[current_room][direction]
+    else:
+        print("You can't go that way, try another direction.")
+        return current_room
+
 # Main game function
 def play_game():
     global current_room
@@ -182,12 +191,6 @@ def play_game():
         if command == 'quit':
             print(f"Farewell, Pharaoh {name}!!!!!")
             break
-        # move the players to the other romms.
-        if command in rooms[current_room]:
-            current_room = rooms[current_room][command]
-            print(f"\nYou move {command} and find yourself in {current_room} :\n")
-            print(rooms[current_room]['description'])
-            print()
             # victory room finish the game with a message of vitory.
             if current_room == 'victory':
                 print(f"\nCongratulations, Pharaoh {name}, you have achieved victory and eternal glory!")
