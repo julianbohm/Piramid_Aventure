@@ -152,25 +152,26 @@ def create_rooms():
                 "glory await you. As the light of the gods fades, you realize"
                 "that your reign has only just begun, your name destined to"
                 "echo through eternity."
-            ),   
+            ),
         },
     }
 
-#Funtion to welcome and get the player name
+
+# Function to welcome and get the player name
 def welcome_player():
     name = input("What is your name, Pharaoh? ")
     print(f"\nWelcome, Pharaoh {name}, to the land of the living!\n")
     return name
 
-# Inicial player's location
-current_room = 'sarcophagus_chamber'
+
+#Function current room
+def describe_current_room(room, rooms):
+    print(rooms[room]['description'])
 
 
 # Main game function
 def play_game():
     global current_room
-
-   
 
     while True:
         command = input("Enter a direction (north, south, east, west) or 'quit' to end the game: ").lower()
