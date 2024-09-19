@@ -150,18 +150,12 @@ def create_rooms():
         },
         'victory': {
             'description': (
-                "You stand victorious in the heart of the temple, the gods now"
-                " silent as the power of your triumph fills the air. The "
-                "treasures of the kingdom lie before you—gold, jewels, and "
-                "relics of immense power, all now yours to command. The throne"
-                " room shimmers with wealth beyond imagination, and your "
-                "subjects bow in reverence as you take your place upon "
-                "the throne. The voice of Horus echoes one final time: "
-                " Pharaoh, the kingdom is yours. Power, riches, and eternal "
-                "glory await you. As the light of the gods fades, you realize "
-                "that your reign has only just begun, your name destined to "
-                "echo through eternity. "
+                "You find yourself deep within the Temple of Horus, standing "
+                "before a massive stone door adorned with golden hieroglyphs. "
+                "To claim your victory, you must solve this puzzle.\n\n "
+                "'I can fill a room, but I take up no space. What am I?'"             
             ),
+            'puzzle_answer': 'light',
         },
     }
 
@@ -202,10 +196,35 @@ def move_player(direction, current_room, rooms):
 def check_game_end(current_room, name):
     if current_room == 'victory':
         print(
-            f"\nCongratulations, Pharaoh {name}, you have achieved victory "
-            "and eternal glory!"
+            f"\nCongratulations, Pharaoh {name}, you are close to "
+            "victory and eternal glory!"
+        )
+        puzzle_answer = input(
+            "To claim your victory, solve this riddle: 'I can fill a "
+            "room, but I take up no space. What am I?'"
+            ).lower()
+        if puzzle_answer == rooms[current_room].get('puzzle_answer'):
+            print(
+                "You answered correctly!!! You stand victorious in the "
+                "heart of the temple, the gods now silent as the power of "
+                "your triumph fills the air. The treasures of the kingdom "
+                "lie before you—gold, jewels, and relics of immense power,"
+                " all now yours to command. The throne room shimmers with "
+                "wealth beyond imagination, and your subjects bow in "
+                "reverence as you take your place upon the throne. The "
+                "voice of Horus echoes one final time: Pharaoh, the "
+                "kingdom is yours. Power, riches, and eternal glory await "
+                "you. As the light of the gods fades, you realize that "
+                "your reign has only just begun, your name destined to "
+                "echo through eternity. "
             )
-        return True
+            return True
+        else:
+            print(
+                "That is not the correct answer. "
+                "Try again or explore other rooms."
+            )
+            return False
     elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
         print(
             f"\nYour journey ends here, Pharaoh {name}. The gods have judged "
