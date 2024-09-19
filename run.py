@@ -151,9 +151,8 @@ def create_rooms():
         'victory': {
             'description': (
                 "You find yourself deep within the Temple of Horus, standing "
-                "before a massive stone door adorned with golden hieroglyphs. "
-                "To claim your victory, you must solve this puzzle.\n\n "
-                "'I can fill a room, but I take up no space. What am I?'"             
+                "before a massive stone door adorned with golden "
+                "hieroglyphs. "           
             ),
             'puzzle_answer': 'light',
         },
@@ -193,19 +192,19 @@ def move_player(direction, current_room, rooms):
 
 
 # function if the game end
-def check_game_end(current_room, name):
+def check_game_end(current_room, name, rooms):
     if current_room == 'victory':
         print(
             f"\nCongratulations, Pharaoh {name}, you are close to "
             "victory and eternal glory!"
         )
         puzzle_answer = input(
-            "To claim your victory, solve this riddle: 'I can fill a "
-            "room, but I take up no space. What am I?'"
+            "To claim your victory, you must solve this puzzle:\n 'I can "
+            "fill a room, but I take up no space. What am I?'"
             ).lower()
         if puzzle_answer == rooms[current_room].get('puzzle_answer'):
             print(
-                "You answered correctly!!! You stand victorious in the "
+                "\nYou answered correctly!!! You stand victorious in the "
                 "heart of the temple, the gods now silent as the power of "
                 "your triumph fills the air. The treasures of the kingdom "
                 "lie before you—gold, jewels, and relics of immense power,"
@@ -251,7 +250,7 @@ def play_game():
         if command in possible_exits:
             current_room = move_player(command, current_room, rooms)
             describe_current_room(current_room, rooms)
-            if check_game_end(current_room, name):
+            if check_game_end(current_room, name, rooms):
                 break
         else:
             print("You can't go that way, try another direction.")
