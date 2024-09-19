@@ -11,7 +11,8 @@ def create_rooms():
             ),
             'north': 'north_passage',
             'south': 'south_passage',
-            'east': 'swamp'
+            'east': 'swamp',
+            'possible_exits': ['north','south', 'east']
         },
         'north_passage': {
             'description': (
@@ -21,7 +22,8 @@ def create_rooms():
             ),
             'north': 'anubis_chamber',
             'east': 'cristal_chamber',
-            'south': 'sarcophagus_chamber'
+            'south': 'sarcophagus_chamber',
+            'possible_exits': ['north','south', 'east']
         },
         'south_passage': {
             'description': (
@@ -33,7 +35,8 @@ def create_rooms():
             ),
             'north': 'sarcophagus_chamber',
             'south': 'seth_temple',
-            'east': 'catacombs'
+            'east': 'catacombs',
+            'possible_exits': ['north','south', 'east']
         },
         'anubis_chamber': {
             'description': (
@@ -61,7 +64,8 @@ def create_rooms():
             'north': 'anubis_chamber',
             'east': 'red_staircase',
             'west': 'north_passage',
-            'south': 'swamp'
+            'south': 'swamp',
+            'possible_exits': ['north','south', 'east', 'west']
         },
         'swamp': {
             'description': (
@@ -73,7 +77,8 @@ def create_rooms():
             'north': 'cristal_chamber',
             'south': 'catacombs',
             'east': 'horus_temple',
-            'west': 'sarcophagus_chamber'
+            'west': 'sarcophagus_chamber',
+            'possible_exits': ['north','south', 'east', 'west']
         },
         'catacombs': {
             'description': (
@@ -88,7 +93,8 @@ def create_rooms():
             'north': 'swamp',
             'south': 'seth_temple',
             'east': 'treasure_chamber',
-            'west': 'south_passage'
+            'west': 'south_passage',
+            'possible_exits': ['north','south', 'east', 'west']
         },
         'seth_temple': {
             'description': (
@@ -110,7 +116,8 @@ def create_rooms():
             'north': 'anubis_chamber',
             'south': 'horus_temple',
             'east': 'victory',
-            'west': 'cristal_chamber'
+            'west': 'cristal_chamber',
+            'possible_exits': ['north','south', 'east', 'west']
         },
         'horus_temple': {
             'description': (
@@ -124,7 +131,8 @@ def create_rooms():
             'north': 'red_staircase',
             'south': 'treasure_chamber',
             'east': 'victory',
-            'west': 'swamp'
+            'west': 'swamp',
+            'possible_exits': ['north','south', 'east', 'west']
         },
         'treasure_chamber': {
             'description': (
@@ -137,7 +145,8 @@ def create_rooms():
             'north': 'horus_temple',
             'south': 'seth_temple',
             'east': 'victory',
-            'west': 'catacombs'
+            'west': 'catacombs',
+            'possible_exits': ['north','south', 'east', 'west']
         },
         'victory': {
             'description': (
@@ -167,18 +176,20 @@ def welcome_player():
 # Function current room
 def describe_current_room(room, rooms):
     print(rooms[room]['description'])
+    print()
 
 
 # function to ask the player for command
-def get_player_command():
+def get_player_command(current_room, rooms):
+    possible_exits = rooms[current_room].get('possible_exits', [])
     return input(
-        "Enter a direction (north, south, east, west), or 'quit'"
-        "to end the game: ").lower()
-
+        f"Enter a direction ({', '.join(possible_exits)}), or 'quit': "
+    ).lower()
 
 # function to move the player
 def move_player(direction, current_room, rooms):
-    if direction in rooms[current_room]:
+    possible_exits = rooms[current_room].get('possible_exits', [])
+    if direction in possible_exits:
         return rooms[current_room][direction]
     else:
         print("You can't go that way, try another direction.")
@@ -211,11 +222,12 @@ def play_game():
     describe_current_room(current_room, rooms)   
 
     while True:
-        command = get_player_command()
+        command = get_player_command(current_room, rooms)
         if command == 'quit':
             print(f"Farewell, Pharaoh {name}!!!!!")
             break
-        elif command in ['north', 'south', 'east', 'west']:
+        possible_exits = rooms[current_room].get('possible_exits', [])
+        if command in possible_exits:
             current_room = move_player(command, current_room, rooms)
             describe_current_room(current_room, rooms)
             if check_game_end(current_room, name):
