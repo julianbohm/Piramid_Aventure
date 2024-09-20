@@ -8,17 +8,18 @@ Piramid Aventure is a text-based adventure game where you, the Pharaoh, have mys
 
 ---
 
-### Table of Contents
+## Table of Contents
 
 - [Overview](#overview)
 - [How to Play](#how-to-play)
 - [Features](#features)
     - [Existing Features](#existing-features)
     - [Future Features](#future-features)
--[bugs and Errors](#bugs-and-erros)
+- [bugs and Errors](#bugs-and-erros)
 - [Strategy](#strategy)
 - [Testing](#testing)
 - [Flowchart](#flowcharts)
+- [Deployment](#deployment)
 - [Tools](#tools)
 - [Acknowledgements](#acknowledgements)
 
@@ -51,6 +52,8 @@ The fully deployed project can be accesed at ......
 
 ## Features
 
+### Existing Features
+
 The game has multiple features implemented  to make the experience more 
 interactive and enjoyable.
 - **Personalize your Text-based Adventure**: The game ask as input the name 
@@ -69,7 +72,42 @@ decisions of the paths that you make.
 - **Rich Storytelling**: Experience a story filled with ancient Egyptian 
 mythology and aventure.
 
+### Future Features
+
+- **Inventory System**: Players will be able to collect items during their 
+ exploration. when all items gather the last room will apear.
+- **Secret Ending**: If the player does not input any commands for 30 seconds 
+at the first room, a hidden "secret winning ending" is triggered,
+- **Monster Battle System**: The player may encounter monsters,  Players will 
+have to fight using random numbers for health and attack.
+- **Randomized Puzzles**: To enhance replayability, puzzles will be randomized 
+for each playthrough. This means that even if a player plays multiple times, 
+they will encounter different challenges, keeping the game fresh and engaging.
+
 ---
 
+## Bugs and Errors
 
 
+
+
+---
+
+## Testing
+
+
+
+---
+
+## Deployment
+
+This project was deployed using Heroku:
+
+Create a new Heroku app
+Add two buildpacks from the "Settings" tab in that order:
+Python
+NodeJS
+Add Config Vars from the "Settings" tab:
+Key: PORT
+Value: 8000
+Connect your GitHub repository and deploy as normal
