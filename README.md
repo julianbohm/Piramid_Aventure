@@ -16,9 +16,8 @@ Piramid Aventure is a text-based adventure game where you, the Pharaoh, have mys
     - [Existing Features](#existing-features)
     - [Future Features](#future-features)
 - [bugs and Errors](#bugs-and-erros)
-- [Strategy](#strategy)
 - [Testing](#testing)
-- [Flowchart](#flowcharts)
+- [Flowchart](#flowchart)
 - [Deployment](#deployment)
 - [Tools](#tools)
 - [Acknowledgements](#acknowledgements)
@@ -35,7 +34,8 @@ chambers, solve puzzles, and make wise choices to either reclaim your throne
 or face eternal doom. Each room holds its own story, and each step you take
 will bring you closer to either glory or downfall.
 
-The fully deployed project can be accesed at ......
+The fully deployed project can be accesed at 
+[Piramid Aventure](https://piramid-aventure-6e77b696f9e3.herokuapp.com/)
 
 ---
 ## How to Play
@@ -60,6 +60,7 @@ interactive and enjoyable.
 of the player at the beginning, so the user can put the name of their 
 choosing for the whole game., the code also protect from accidental empty 
 spaces or estarting without name.
+![inicial image](./readme-images/add-name.png)
 - **Text-based Adventure**: Explore rooms, interact with the environment, 
 and make choices via text commands.
 - the text comands available are North, South, East, West, and Quit.
@@ -67,6 +68,7 @@ and make choices via text commands.
 depending of the room, making it easier for the user to know where to go.
 - **Puzzle Solving**: the game gives the user the challenge at the end to 
 answer a puzzle to unlock paths claim victory.
+![puzzle](./readme-images/end.png)
 - **Multiple Endings**: Your journey can end in different ways based on the 
 decisions of the paths that you make.
 - **Rich Storytelling**: Experience a story filled with ancient Egyptian 
@@ -95,19 +97,69 @@ they will encounter different challenges, keeping the game fresh and engaging.
 
 ## Testing
 
+### CI Python Linter test
+thanks to the CI Python Linter test, the program got clean and up to date with
+format.
+![CI Python Linter Test](./readme-images/ci-python-linter.png)
+
+### manual Test
+-during the whole process I constantly test all the code manually, finding
+many of the errors and bugs, discribe above. 
 
 
 ---
 
+## Flowchart
+
+The Flowchart for my program was created using <b>LucidChart</b> and it
+ visually the Chart of how all the rooms are connected.
+ ![Flowchart](./readme-images/diagram-piramid.png)
+
+
+
+
+
+
+---
+
+
 ## Deployment
 
-This project was deployed using Heroku:
+- This project was deployed using Heroku:
+- Create a new Heroku app
+- Add two buildpacks from the "Settings" tab in that order:
+   - Python
+   - NodeJS
+- Add Config Vars from the "Settings" tab:
+- Key: PORT
+- Value: 8000
+- Connect your GitHub repository and deploy as normal
+- choose 
 
-Create a new Heroku app
-Add two buildpacks from the "Settings" tab in that order:
-Python
-NodeJS
-Add Config Vars from the "Settings" tab:
-Key: PORT
-Value: 8000
-Connect your GitHub repository and deploy as normal
+---
+
+## Tools
+
+- [GitHub](https://github.com/) - used for hosting the source 
+  code of the program
+- [Gitpod Dev Environment](https://gitpod.io/) - used for testing the program.
+- [CI Python Linter](https://pep8ci.herokuapp.com/) - 
+  used for validating the python code.
+- [Heroku](https://dashboard.heroku.com/) - used for deploying the project.
+- [LucidChart](https://www.lucidchart.com/) - used for creating the Flowchart.
+
+---
+
+## Acknowledgments
+
+I would like to express my  gratitude to the following people who 
+contributed to the success of this project:
+
+- **Fellow students**: For their support, feedback, and encouragement 
+   throughout the development process.
+- **Mentor Spencer**: For providing guidance, mentorship, and inspiration, 
+   which helped me navigate through challenges and stay on course.
+- **All the Tutors**: For their dedication, patience, and expert advice,
+ necessary skills to complete this project.
+
+Thank you all for your contributions to this game.

@@ -1,5 +1,5 @@
 def create_rooms():
-    """ This function handles the data for the rooms. """ 
+    """ This function handles the data for the rooms. """
     return {
         'sarcophagus_chamber': {
             'description': (
@@ -65,7 +65,7 @@ def create_rooms():
             'east': 'red_staircase',
             'west': 'north_passage',
             'south': 'swamp',
-            'possible_exits': ['north' , 'south', 'east', 'west']
+            'possible_exits': ['north', 'south', 'east', 'west']
         },
         'swamp': {
             'description': (
@@ -227,7 +227,6 @@ def check_game_end(current_room, name, rooms):
                 return True
             else:
                 print("That is not the correct answer. Try again.")
-            
 
     elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
         print(
@@ -235,8 +234,9 @@ def check_game_end(current_room, name, rooms):
             "you, and your name will be forgotten in the sands of time."
         )
         return True
-        
+
     return False
+
 
 def play_game():
     """ Main game function """
