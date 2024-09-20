@@ -171,13 +171,12 @@ def welcome_player():
 
 def describe_current_room(room, rooms):
     """ Function current room """
-    print()
     print(rooms[room]['description'])
     print()
 
 
 def get_player_command(current_room, rooms):
-    """ function to ask the player for command """
+    """ ask the player for command """
     possible_exits = rooms[current_room].get('possible_exits', [])
     return input(
         f"Enter a direction ({', '.join(possible_exits)}), or 'quit': "
@@ -202,39 +201,42 @@ def check_game_end(current_room, name, rooms):
             f"\nCongratulations, Pharaoh {name}, you are close to "
             "victory and eternal glory!"
         )
-        puzzle_answer = input(
-            "To claim your victory, you must solve this puzzle:\n 'I can "
-            "fill a room, but I take up no space. What am I?'\n"
-            ).lower()
-        if puzzle_answer == rooms[current_room].get('puzzle_answer'):
-            print(
-                "\nYou answered correctly!!! You stand victorious in the "
-                "heart of the temple, the gods now silent as the power of "
-                "your triumph fills the air. The treasures of the kingdom "
-                "lie before you—gold, jewels, and relics of immense power,"
-                " all now yours to command. The throne room shimmers with "
-                "wealth beyond imagination, and your subjects bow in "
-                "reverence as you take your place upon the throne. The "
-                "voice of Horus echoes one final time: Pharaoh, the "
-                "kingdom is yours. Power, riches, and eternal glory await "
-                "you. As the light of the gods fades, you realize that "
-                "your reign has only just begun, your name destined to "
-                "echo through eternity. "
-            )
-            return True
-        else:
-            print(
-                "That is not the correct answer. "
-                "Try again or explore other rooms."
-            )
-            return False
+
+        # keep asking the puzzle until correct answer
+        while True:
+            puzzle_answer = input(
+                "To claim your victory, you must solve this puzzle:\n 'I can "
+                "fill a room, but I take up no space. What am I?'\n"
+                ).lower()
+
+            if puzzle_answer == rooms[current_room].get('puzzle_answer'):
+                print(
+                    "\nYou answered correctly!!! You stand victorious in the "
+                    "heart of the temple, the gods now silent as the power of "
+                    "your triumph fills the air. The treasures of the kingdom "
+                    "lie before you—gold, jewels, and relics of immense power,"
+                    " all now yours to command. The throne room shimmers with "
+                    "wealth beyond imagination, and your subjects bow in "
+                    "reverence as you take your place upon the throne. The "
+                    "voice of Horus echoes one final time: Pharaoh, the "
+                    "kingdom is yours. Power, riches, and eternal glory await "
+                    "you. As the light of the gods fades, you realize that "
+                    "your reign has only just begun, your name destined to "
+                    "echo through eternity. "
+                )
+                return True
+            else:
+                print("That is not the correct answer. Try again.")
+            
+
     elif current_room == 'seth_temple' or current_room == 'anubis_chamber':
         print(
             f"\nYour journey ends here, Pharaoh {name}. The gods have judged "
             "you, and your name will be forgotten in the sands of time."
         )
         return True
-
+        
+    return False
 
 def play_game():
     """ Main game function """
