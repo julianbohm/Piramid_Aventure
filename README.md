@@ -1,32 +1,39 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Piramid Aventure 
 
-Welcome,
+### A text-base Adventure Game
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **May 14, 2024**
+Piramid Aventure is a text-based adventure game where you, the Pharaoh, have mysteriously awoken from your eternal slumber in an ancient pyramid. As you explore various chambers, your choices will determine your fate. Can you reclaim your glory, or will the gods seal your fate forever?
 
-## Reminders
 
-- Your code must be placed in the `run.py` file
-- Your dependencies must be placed in the `requirements.txt` file
-- Do not edit any of the other files or your code may not deploy properly
-
-## Creating the Heroku app
-
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
-
-1. `heroku/python`
-2. `heroku/nodejs`
-
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
-
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
-
-Connect your GitHub repository and deploy as normal.
-
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
 
 ---
 
-Happy coding!
+### Table of Contents
+
+- [Overview](#overview)
+- [Features](#features)
+
+
+
+
+
+---
+In **Piramid Aventure**, players explore a series of interconnected rooms within an ancient pyramid. The goal is to navigate through the various chambers, solve puzzles, and make wise choices to either reclaim your throne or face eternal doom. Each room holds its own story, and each step you take will bring you closer to either glory or downfall.
+
+The fully deployed project can be accesed at ......
+
+---
+
+## Features
+- **Personalize your Text-based Adventure**: the game ask at the beginning of the game the name of the player, so the user can put the name of their choosing for the whole game.
+- **Text-based Adventure**: Explore rooms, interact with the environment, and make choices via text commands.
+- the text comands avalible are North, South, East, West, and Quit.
+-every room gives the user the real option of each room making it easier for the user to know where to go.
+- **Puzzle Solving**: the game gives the user the challenge at the end to answer a puzzle to unlock paths claim victory.
+- **Multiple Endings**: Your journey can end in different ways based on the decisions of the paths that you make.
+- **Rich Storytelling**: Experience a story filled with ancient Egyptian mythology and aventure.
+
+---
+
+
+

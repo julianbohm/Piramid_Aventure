@@ -12,7 +12,7 @@ def create_rooms():
             'north': 'north_passage',
             'south': 'south_passage',
             'east': 'swamp',
-            'possible_exits': ['north','south', 'east']
+            'possible_exits': ['north', 'south', 'east']
         },
         'north_passage': {
             'description': (
@@ -23,7 +23,7 @@ def create_rooms():
             'north': 'anubis_chamber',
             'east': 'cristal_chamber',
             'south': 'sarcophagus_chamber',
-            'possible_exits': ['north','south', 'east']
+            'possible_exits': ['north', 'south', 'east']
         },
         'south_passage': {
             'description': (
@@ -36,7 +36,7 @@ def create_rooms():
             'north': 'sarcophagus_chamber',
             'south': 'seth_temple',
             'east': 'catacombs',
-            'possible_exits': ['north','south', 'east']
+            'possible_exits': ['north', 'south', 'east']
         },
         'anubis_chamber': {
             'description': (
@@ -65,7 +65,7 @@ def create_rooms():
             'east': 'red_staircase',
             'west': 'north_passage',
             'south': 'swamp',
-            'possible_exits': ['north','south', 'east', 'west']
+            'possible_exits': ['north' , 'south', 'east', 'west']
         },
         'swamp': {
             'description': (
@@ -78,7 +78,7 @@ def create_rooms():
             'south': 'catacombs',
             'east': 'horus_temple',
             'west': 'sarcophagus_chamber',
-            'possible_exits': ['north','south', 'east', 'west']
+            'possible_exits': ['north', 'south', 'east', 'west']
         },
         'catacombs': {
             'description': (
@@ -94,7 +94,7 @@ def create_rooms():
             'south': 'seth_temple',
             'east': 'treasure_chamber',
             'west': 'south_passage',
-            'possible_exits': ['north','south', 'east', 'west']
+            'possible_exits': ['north', 'south', 'east', 'west']
         },
         'seth_temple': {
             'description': (
@@ -117,7 +117,7 @@ def create_rooms():
             'south': 'horus_temple',
             'east': 'victory',
             'west': 'cristal_chamber',
-            'possible_exits': ['north','south', 'east', 'west']
+            'possible_exits': ['north', 'south', 'east', 'west']
         },
         'horus_temple': {
             'description': (
@@ -132,7 +132,7 @@ def create_rooms():
             'south': 'treasure_chamber',
             'east': 'victory',
             'west': 'swamp',
-            'possible_exits': ['north','south', 'east', 'west']
+            'possible_exits': ['north', 'south', 'east', 'west']
         },
         'treasure_chamber': {
             'description': (
@@ -146,13 +146,13 @@ def create_rooms():
             'south': 'seth_temple',
             'east': 'victory',
             'west': 'catacombs',
-            'possible_exits': ['north','south', 'east', 'west']
+            'possible_exits': ['north', 'south', 'east', 'west']
         },
         'victory': {
             'description': (
                 "You find yourself deep within the Temple of Horus, standing "
                 "before a massive stone door adorned with golden "
-                "hieroglyphs. "           
+                "hieroglyphs. "
             ),
             'puzzle_answer': 'light',
         },
@@ -180,6 +180,7 @@ def get_player_command(current_room, rooms):
         f"Enter a direction ({', '.join(possible_exits)}), or 'quit': "
     ).lower()
     print()
+
 
 # function to move the player
 def move_player(direction, current_room, rooms):
@@ -239,7 +240,7 @@ def play_game():
 
     name = welcome_player()
 
-    describe_current_room(current_room, rooms)   
+    describe_current_room(current_room, rooms)
 
     while True:
         command = get_player_command(current_room, rooms)
