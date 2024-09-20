@@ -161,7 +161,7 @@ def create_rooms():
 
 # Function to welcome and get the player name
 def welcome_player():
-    name = input("What is your name, Pharaoh? ")
+    name = input("What is your name, Pharaoh?:\n ")
     print(f"\nWelcome, Pharaoh {name}, to the land of the living!\n")
     return name
 
@@ -201,7 +201,7 @@ def check_game_end(current_room, name, rooms):
         )
         puzzle_answer = input(
             "To claim your victory, you must solve this puzzle:\n 'I can "
-            "fill a room, but I take up no space. What am I?'"
+            "fill a room, but I take up no space. What am I?'\n"
             ).lower()
         if puzzle_answer == rooms[current_room].get('puzzle_answer'):
             print(

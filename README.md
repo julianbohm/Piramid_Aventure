@@ -12,6 +12,8 @@ Piramid Aventure is a text-based adventure game where you, the Pharaoh, have mys
 
 - [Overview](#overview)
 - [Features](#features)
+-[Strategy](#strategy)
+- [Testing] (#testing)
 
 
 
@@ -25,10 +27,12 @@ The fully deployed project can be accesed at ......
 ---
 
 ## Features
-- **Personalize your Text-based Adventure**: the game ask at the beginning of the game the name of the player, so the user can put the name of their choosing for the whole game.
+
+The game has multiple features implemented  to make the experience more interactive and enjoyable.
+- **Personalize your Text-based Adventure**: The game ask as input the name of the player at the beginning, so the user can put the name of their choosing for the whole game.
 - **Text-based Adventure**: Explore rooms, interact with the environment, and make choices via text commands.
-- the text comands avalible are North, South, East, West, and Quit.
--every room gives the user the real option of each room making it easier for the user to know where to go.
+- the text comands available are North, South, East, West, and Quit.
+-every room gives the user the choices availables for each room, they change depnding of the room, making it easier for the user to know where to go.
 - **Puzzle Solving**: the game gives the user the challenge at the end to answer a puzzle to unlock paths claim victory.
 - **Multiple Endings**: Your journey can end in different ways based on the decisions of the paths that you make.
 - **Rich Storytelling**: Experience a story filled with ancient Egyptian mythology and aventure.
