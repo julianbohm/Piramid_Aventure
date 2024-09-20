@@ -17,7 +17,9 @@ Piramid Aventure is a text-based adventure game where you, the Pharaoh, have mys
 -[bugs and Errors](#bugs-and-erros)
 - [Strategy](#strategy)
 - [Testing](#testing)
-
+- [Flowchart](#flowcharts)
+- [Tools](#tools)
+- [Acknowledgements](#acknowledgements)
 
 
 

@@ -1,5 +1,5 @@
-# Function for rooms dictionary
 def create_rooms():
+    """ This function handles the data for the rooms. """ 
     return {
         'sarcophagus_chamber': {
             'description': (
@@ -159,22 +159,22 @@ def create_rooms():
     }
 
 
-# Function to welcome and get the player name
 def welcome_player():
+    """ Function to welcome and get the player name. """
     name = input("What is your name, Pharaoh?:\n ")
     print(f"\nWelcome, Pharaoh {name}, to the land of the living!\n")
     return name
 
 
-# Function current room
 def describe_current_room(room, rooms):
+    """ Function current room """
     print()
     print(rooms[room]['description'])
     print()
 
 
-# function to ask the player for command
 def get_player_command(current_room, rooms):
+    """ function to ask the player for command """
     possible_exits = rooms[current_room].get('possible_exits', [])
     return input(
         f"Enter a direction ({', '.join(possible_exits)}), or 'quit': "
@@ -182,8 +182,8 @@ def get_player_command(current_room, rooms):
     print()
 
 
-# function to move the player
 def move_player(direction, current_room, rooms):
+    """ function to move the player """
     possible_exits = rooms[current_room].get('possible_exits', [])
     if direction in possible_exits:
         return rooms[current_room][direction]
@@ -192,8 +192,8 @@ def move_player(direction, current_room, rooms):
         return current_room
 
 
-# function if the game end
 def check_game_end(current_room, name, rooms):
+    """ function if the game end """
     if current_room == 'victory':
         print(
             f"\nCongratulations, Pharaoh {name}, you are close to "
@@ -233,8 +233,8 @@ def check_game_end(current_room, name, rooms):
         return True
 
 
-# Main game function
 def play_game():
+    """ Main game function """
     rooms = create_rooms()
     current_room = 'sarcophagus_chamber'
 
