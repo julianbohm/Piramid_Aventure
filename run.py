@@ -161,7 +161,10 @@ def create_rooms():
 
 def welcome_player():
     """ Function to welcome and get the player name. """
-    name = input("What is your name, Pharaoh?:\n ")
+    name = input("What is your name, Pharaoh?:\n ").strip()
+    # Make sure user enter something
+    while name == "":
+        name = input("You need to enter your name Pharaoh:").strip()
     print(f"\nWelcome, Pharaoh {name}, to the land of the living!\n")
     return name
 
