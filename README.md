@@ -106,6 +106,31 @@ they will encounter different challenges, keeping the game fresh and engaging.
 
 ## Bugs and Errors
 
+#### Refactoring: From One Big Function to Many Independent Functions:
+- Initially, the project had a **single large function** that handled all 
+ aspects of the game: greeting the player, handling room descriptions, 
+ and moving between rooms, game-end, and puzzles. While this approach worked,
+ it led to several major problems:
+- **Complexity**: The function became difficult to read, maintain, and debug.
+- **Testing**: It was nearly impossible to test individual components of the 
+game logic without running the entire function.
+- **Scalability**: As more features were added, the function grew more 
+complicated, making it harder to manage and extend.
+
+**The Solution**:
+- To address these issues, the code was refactored into 
+**many independent functions**, each responsible for a single task. 
+This new structure improved the code in several ways:
+
+- **Modularity**: Each function now handles a specific task, such as 
+welcoming the player `welcome_player()`, moving between rooms `move_player()`, 
+or describing the current room `describe_current_room()`.
+- **Readability**: The code became cleaner and easier to understand. Each 
+function's purpose is clearly defined.
+- **Reusability**: Functions can now be reused and modified independently. 
+- **Testability**: Individual functions can now be tested separated.
+- **Future Features**: New features will  be added as standalone functions, 
+without needing to modify the whole program.
 
 
 
@@ -118,9 +143,38 @@ thanks to the CI Python Linter test, the program got clean and up to date with
 format.
 ![CI Python Linter Test](./readme-images/ci-python-linter.png)
 
-### manual Test
--during the whole process I constantly test all the code manually, finding
-many of the errors and bugs, discribe above. 
+### Manual Test
+**Player Name Input**
+- **Goal**: Ensure player cannot proceed without entering a valid name.
+- **Steps**:
+  1. Run the game.
+  2. Leave the name input blank and press Enter.
+  3. Enter a valid name (e.g., "Tutankhamun").
+- **Expected Result**: Game ask again until a valid name is entered, 
+then displays a personalized welcome message.
+
+**Room Navigation**
+- **Goal**: Verify room descriptions and valid/invalid movement.
+- **Steps**:
+  1. Start in `sarcophagus_chamber` and enter directions: `north`, `south`, 
+  `east`,  `west`.
+  2. move to every single room in every possible direcction , valid or 
+  invalid direction.
+- **Expected Result**: Room descriptions appear, valid exits work, and 
+invalid moves are denied.
+
+**Puzzle Victory**
+- **Goal**: Correct puzzle-solving leads to victory.
+- **Steps**:
+  1. Reach the `Victory_chamber Room`.
+  2. Solve the puzzle by typing "light."
+- **Expected Result**: Displays victory message and ends the game.
+
+**Game Over Condition**
+- **Goal**: Verify that certain rooms end the game.
+- **Steps**:
+  1. Enter the `Anubis Chamber` or `Seth Temple`.
+- **Expected Result**: The game ends with a "Game Over" message. 
 
 
 ---
