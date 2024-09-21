@@ -2,7 +2,10 @@
 
 ### A text-base Adventure Game
 
-Piramid Aventure is a text-based adventure game where you, the Pharaoh, have mysteriously awoken from your eternal slumber in an ancient pyramid. As you explore various chambers, your choices will determine your fate. Can you reclaim your glory, or will the gods seal your fate forever?
+Piramid Aventure is a text-based adventure game where you, the Pharaoh, have 
+mysteriously awoken from your eternal slumber in an ancient pyramid. As you 
+explore various chambers, your choices will determine your fate. Can you 
+reclaim your glory, or will the gods seal your fate forever?
 
 
 
@@ -57,10 +60,21 @@ The fully deployed project can be accesed at
 The game has multiple features implemented  to make the experience more 
 interactive and enjoyable.
 - **Personalize your Text-based Adventure**: The game ask as input the name 
-of the player at the beginning, so the user can put the name of their 
-choosing for the whole game., the code also protect from accidental empty 
-spaces or estarting without name.
+of the player at the beginning, **"What is your name, Pharaoh?"** so the user 
+can put the name of their choosing for the whole game.
+
 ![inicial image](./readme-images/add-name.png)
+
+- The the code also protect from accidental empty 
+spaces or estarting without name, If the player leaves the input blank 
+(presses Enter without typing anything), the function will keep asking for a 
+valid name by displaying: **"You need to enter your name Pharaoh:"**. 
+Once a valid name is provided, the player is greeted with a personalized 
+message: **"Welcome, Pharaoh [name], to the land of the living!"**, and same 
+name is returned to be used throughout the game.
+
+![no name](./readme-images/not-name.png)
+
 - **Text-based Adventure**: Explore rooms, interact with the environment, 
 and make choices via text commands.
 - the text comands available are North, South, East, West, and Quit.
@@ -68,7 +82,9 @@ and make choices via text commands.
 depending of the room, making it easier for the user to know where to go.
 - **Puzzle Solving**: the game gives the user the challenge at the end to 
 answer a puzzle to unlock paths claim victory.
+
 ![puzzle](./readme-images/end.png)
+
 - **Multiple Endings**: Your journey can end in different ways based on the 
 decisions of the paths that you make.
 - **Rich Storytelling**: Experience a story filled with ancient Egyptian 
@@ -112,11 +128,10 @@ many of the errors and bugs, discribe above.
 ## Flowchart
 
 The Flowchart for my program was created using <b>LucidChart</b> and it
- visually the Chart of how all the rooms are connected.
+a visually repesentation of how all the rooms are connected. it was a big help 
+
+
  ![Flowchart](./readme-images/diagram-piramid.png)
-
-
-
 
 
 
@@ -159,7 +174,9 @@ contributed to the success of this project:
    throughout the development process.
 - **Mentor Spencer**: For providing guidance, mentorship, and inspiration, 
    which helped me navigate through challenges and stay on course.
-- **All the Tutors**: For their dedication, patience, and expert advice,
- necessary skills to complete this project.
+- **All the Tutors**: For their dedication, patience, and expert advice, 
+necessary skills to complete this project.
+**My Son**: For the idea of making a game of ancient Egypt, big ideas for 
+some of the rooms.
 
 Thank you all for your contributions to this game.

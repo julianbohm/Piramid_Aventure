@@ -115,7 +115,7 @@ def create_rooms():
             ),
             'north': 'anubis_chamber',
             'south': 'horus_temple',
-            'east': 'victory',
+            'east': 'victory_chamber',
             'west': 'cristal_chamber',
             'possible_exits': ['north', 'south', 'east', 'west']
         },
@@ -130,7 +130,7 @@ def create_rooms():
             ),
             'north': 'red_staircase',
             'south': 'treasure_chamber',
-            'east': 'victory',
+            'east': 'victory_chamber',
             'west': 'swamp',
             'possible_exits': ['north', 'south', 'east', 'west']
         },
@@ -144,11 +144,11 @@ def create_rooms():
             ),
             'north': 'horus_temple',
             'south': 'seth_temple',
-            'east': 'victory',
+            'east': 'victory_chamber',
             'west': 'catacombs',
             'possible_exits': ['north', 'south', 'east', 'west']
         },
-        'victory': {
+        'victory_chamber': {
             'description': (
                 "You find yourself deep within the Temple of Horus, standing "
                 "before a massive stone door adorned with golden "
@@ -170,7 +170,8 @@ def welcome_player():
 
 
 def describe_current_room(room, rooms):
-    """ Function current room """
+    """ Function to print the current room name and description """
+    print(f"\nYou are in the {room.replace('_', ' ').title()}:")
     print(rooms[room]['description'])
     print()
 
@@ -196,7 +197,7 @@ def move_player(direction, current_room, rooms):
 
 def check_game_end(current_room, name, rooms):
     """ function if the game end """
-    if current_room == 'victory':
+    if current_room == 'victory_chamber':
         print(
             f"\nCongratulations, Pharaoh {name}, you are close to "
             "victory and eternal glory!"
