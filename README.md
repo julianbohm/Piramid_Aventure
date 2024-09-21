@@ -1,8 +1,8 @@
-# Piramid Aventure 
+# Piramid Adventure 
 
 ### A text-base Adventure Game
 
-Piramid Aventure is a text-based adventure game where you, the Pharaoh, have 
+Piramid Adventure is a text-based adventure game where you, the Pharaoh, have 
 mysteriously awoken from your eternal slumber in an ancient pyramid. As you 
 explore various chambers, your choices will determine your fate. Can you 
 reclaim your glory, or will the gods seal your fate forever?
@@ -18,11 +18,12 @@ reclaim your glory, or will the gods seal your fate forever?
 - [Features](#features)
     - [Existing Features](#existing-features)
     - [Future Features](#future-features)
-- [bugs and Errors](#bugs-and-erros)
+- [Bugs and Errors](#bugs-and-errors)
 - [Testing](#testing)
 - [Flowchart](#flowchart)
 - [Deployment](#deployment)
 - [Tools](#tools)
+- [References](#references)
 - [Acknowledgements](#acknowledgements)
 
 
@@ -31,14 +32,28 @@ reclaim your glory, or will the gods seal your fate forever?
 ---
 
 ## Overview
-In **Piramid Aventure**, players explore a series of interconnected rooms
-within an ancient pyramid. The goal is to navigate through the various
-chambers, solve puzzles, and make wise choices to either reclaim your throne
-or face eternal doom. Each room holds its own story, and each step you take
-will bring you closer to either glory or downfall.
+This project is a **text-based adventure game** set in an ancient pyramid 
+where the player takes on the role of an awakened Pharaoh. The player 
+navigates through different rooms of the pyramid, solving puzzles and making 
+decisions that impact the outcome of the game. The goal is to reach the 
+**Victory Chamber**, solve the final puzzle, and claim eternal glory. 
+Along the way, players must be cautious of traps and challenges, as certain 
+rooms will end the game abruptly.
+
+The game is designed with modular functions, allowing for easy extension 
+and customization. Key features include:
+- **Player Input Handling**: Ensures players provide a valid name before 
+proceeding.
+- **Room Navigation**: Players can move between different rooms, each with 
+unique descriptions and available exits.
+- **Puzzles and Endings**: Players solve puzzles to progress, with both 
+a victory and potential game-over scenarios based on their actions.
+
+The project demonstrate basic programming concepts like control flow, 
+functions, and user input handling in Python. 
 
 The fully deployed project can be accesed at 
-[Piramid Aventure](https://piramid-aventure-6e77b696f9e3.herokuapp.com/)
+[Piramid Adventure](https://piramid-aventure-6e77b696f9e3.herokuapp.com/)
 
 ---
 ## How to Play
@@ -88,7 +103,7 @@ answer a puzzle to unlock paths claim victory.
 - **Multiple Endings**: Your journey can end in different ways based on the 
 decisions of the paths that you make.
 - **Rich Storytelling**: Experience a story filled with ancient Egyptian 
-mythology and aventure.
+mythology and adventure.
 
 ### Future Features
 
@@ -106,7 +121,8 @@ they will encounter different challenges, keeping the game fresh and engaging.
 
 ## Bugs and Errors
 
-#### Refactoring: From One Big Function to Many Independent Functions:
+#### Main Error
+Refactoring: From One Big Function to Many Independent Functions:
 - Initially, the project had a **single large function** that handled all 
  aspects of the game: greeting the player, handling room descriptions, 
  and moving between rooms, game-end, and puzzles. While this approach worked,
@@ -132,6 +148,20 @@ function's purpose is clearly defined.
 - **Future Features**: New features will  be added as standalone functions, 
 without needing to modify the whole program.
 
+#### Minors Bugs
+- several minor bugs were identified and fixed to ensure smoother gameplay:
+
+- ***Empty Player Name Input***
+- **Issue**: Initially, the game allowed the player to press Enter without 
+entering a name, which led to blank inputs and incomplete gameplay.
+- **Fix**: We added a loop in the `welcome_player()` function to repeatedly
+ ask the player until they enter a valid name.
+
+- ***lack of Room Name***
+- **Issue**: When visiting rooms, the description wasn't always displayed,
+ leading to confusion or missed details.
+- **Fix**: Ensured the `describe_current_room()` function prints the room's 
+ name with description every time the player enters or re-enters a room.
 
 
 ---
@@ -219,7 +249,21 @@ a visually repesentation of how all the rooms are connected. it was a big help
 
 ---
 
-## Acknowledgments
+## References
+
+- [W3School](https://www.w3schools.com/python/) for their tutorials and
+  explanations
+- [Love Sandwishes](https://learn.codeinstitute.net) clear introduction to 
+  basic concepts of Python.
+- [LeMaster Tech](https://www.youtube.com/watch?v=u8X6TiJA8as&t=748s) 
+Easy to understand tutorial for inputs and outputs.
+- [Dante Lee](https://www.youtube.com/watch?v=lI6S2-icPHE&t=3s)
+Easy clear room dictionary inspiration, als well as clean work method to code. 
+really like the process.
+---
+
+
+## Acknowledgements
 
 I would like to express my  gratitude to the following people who 
 contributed to the success of this project:
@@ -230,7 +274,7 @@ contributed to the success of this project:
    which helped me navigate through challenges and stay on course.
 - **All the Tutors**: For their dedication, patience, and expert advice, 
 necessary skills to complete this project.
-**My Son**: For the idea of making a game of ancient Egypt, big ideas for 
+- **My Son**: For the idea of making a game of ancient Egypt, big ideas for 
 some of the rooms.
 
-Thank you all for your contributions to this game.
+**Thank you all for your contributions to this game.**
